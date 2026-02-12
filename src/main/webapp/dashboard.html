@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ocean View Resort - Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    // Simple UI-only protection:
+    // If not logged in, go back to login page.
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">Ocean View Resort <span class="badge">Dashboard</span></div>
+      <div class="actions">
+       <button class="btn" onclick="logout()">Logout</button>
+
+<script>
+function logout(){
+  sessionStorage.removeItem("loggedIn");
+  sessionStorage.removeItem("user");
+  window.location.href = "login.html";
+}
+</script>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1>Menu</h1>
+      <p>Choose an action. (UI-only navigation)</p>
+
+      <div class="grid" style="margin-top:16px;">
+        <div class="col-4">
+          <div class="card">
+            <h2>Add Reservation</h2>
+            <p>Create a new room reservation.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="addReservation.html">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <h2>Display Reservation</h2>
+            <p>Search and view reservation details.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="viewReservation.html">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <h2>Calculate Bill</h2>
+            <p>Generate and print a bill.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="bill.html">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card">
+            <h2>Help</h2>
+            <p>How to use this system.</p>
+            <div class="actions">
+              <a class="btn" href="help.html">Open Help</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Tip: When you build Java Servlets later, each button will point to a servlet URL (e.g., <b>/addReservation</b>)
+        instead of a static HTML page.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

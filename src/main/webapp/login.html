@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ocean View Resort - Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">Ocean View Resort <span class="badge">Room Reservation System</span></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card" style="max-width:420px;margin:24px auto;">
+      <h1>Staff Login</h1>
+      <p>Please sign in to access the reservation system.</p>
+
+      <form onsubmit="return doLogin(event)">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="Enter username" required />
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter password" required />
+
+        <!-- Show password -->
+        <div style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+          <input id="showPw" type="checkbox" style="width:auto; margin:0;" onclick="togglePassword()" />
+          <label for="showPw" style="margin:0; cursor:pointer;">Show password</label>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Login</button>
+          <a class="btn" href="help.html">Help</a>
+        </div>
+      </form>
+
+      <div id="errorBox" class="note"
+           style="display:none; border-style:solid; border-color:#fca5a5; background:#fff1f2;">
+        <b>Login failed.</b> Invalid username or password.
+      </div>
+
+      <div class="note">
+        <b>Tip:</b> If you forget your login details, please contact the system administrator.
+      </div>
+    </div>
+  </div>
+
+<script>
+function togglePassword(){
+  const pw = document.getElementById("password");
+  pw.type = (pw.type === "password") ? "text" : "password";
+}
+
+function doLogin(e){
+  e.preventDefault();
+
+  const u = document.getElementById("username").value.trim();
+  const p = document.getElementById("password").value;
+
+  // Hardcoded credentials (UI-only)
+  if(u === "icbt1" && p === "12345"){
+    sessionStorage.setItem("loggedIn", "true");
+    sessionStorage.setItem("user", u);
+    window.location.href = "dashboard.html";
+    return false;
+  }
+
+  document.getElementById("errorBox").style.display = "block";
+  return false;
+}
+</script>
+
+</body>
+</html>

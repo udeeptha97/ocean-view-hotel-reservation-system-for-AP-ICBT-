@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+  ...
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">Ocean View Resort <span class="badge">Bill</span></div>
+      <div class="actions">
+        <a class="btn" href="dashboard.html">Back</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1>Calculate & Print Bill</h1>
+      <p>Enter reservation number and generate the bill.</p>
+
+      <!-- Later: action="bill" method="get" (Servlet returns real bill) -->
+      <form action="#" method="get">
+        <div class="row">
+          <div>
+            <label for="billResNo">Reservation No</label>
+            <input id="billResNo" name="reservationNo" type="text" placeholder="e.g., R001" required />
+          </div>
+          <div style="align-self:end;">
+            <button class="btn btn-primary" type="button" onclick="fakeBill()">Generate</button>
+          </div>
+        </div>
+      </form>
+
+      <div id="billBox" style="margin-top:14px; display:none;">
+        <h2>Bill Summary</h2>
+        <table class="table">
+          <tr><th>Reservation No</th><td id="bNo"></td></tr>
+          <tr><th>Guest</th><td id="bName"></td></tr>
+          <tr><th>Room Type</th><td id="bRoom"></td></tr>
+          <tr><th>Nights</th><td id="bNights"></td></tr>
+          <tr><th>Nightly Rate</th><td id="bRate"></td></tr>
+          <tr><th>Total</th><td id="bTotal"></td></tr>
+        </table>
+
+        <div class="actions">
+          <button class="btn" type="button" onclick="window.print()">Print</button>
+        </div>
+      </div>
+
+      <div class="note">
+        UI-only demo: This bill uses example numbers. Later your BillingService will calculate from MySQL.
+      </div>
+    </div>
+  </div>
+
+<script>
+function fakeBill(){
+  document.getElementById('bNo').textContent = 'R001';
+  document.getElementById('bName').textContent = 'Kamal Perera';
+  document.getElementById('bRoom').textContent = 'DELUXE';
+  document.getElementById('bNights').textContent = '3';
+  document.getElementById('bRate').textContent = 'LKR 15,000.00';
+  document.getElementById('bTotal').textContent = 'LKR 45,000.00';
+  document.getElementById('billBox').style.display = 'block';
+}
+</script>
+</body>
+</html>

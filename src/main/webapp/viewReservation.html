@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  ...
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">Ocean View Resort <span class="badge">Display Reservation</span></div>
+      <div class="actions">
+        <a class="btn" href="dashboard.html">Back</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1>Display Reservation</h1>
+      <p>Search by reservation number.</p>
+
+      <!-- Later: action="viewReservation" method="get" -->
+      <form action="#" method="get">
+        <div class="row">
+          <div>
+            <label for="resNo">Reservation No</label>
+            <input id="resNo" name="reservationNo" type="text" placeholder="e.g., R001" required />
+          </div>
+          <div style="align-self:end;">
+            <button class="btn btn-primary" type="button" onclick="fakeSearch()">Search</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="note">
+        UI-only demo: click “Search” to show example data (no database yet).
+      </div>
+
+      <div id="result" style="margin-top:14px; display:none;">
+        <h2>Reservation Details</h2>
+        <table class="table">
+          <tr><th>Reservation No</th><td id="vNo"></td></tr>
+          <tr><th>Guest Name</th><td id="vName"></td></tr>
+          <tr><th>Contact</th><td id="vContact"></td></tr>
+          <tr><th>Room Type</th><td id="vRoom"></td></tr>
+          <tr><th>Check-in</th><td id="vIn"></td></tr>
+          <tr><th>Check-out</th><td id="vOut"></td></tr>
+        </table>
+
+        <div class="actions">
+          <a class="btn" href="bill.html">Calculate Bill</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+function fakeSearch(){
+  // UI-only example data
+  document.getElementById('vNo').textContent = 'R001';
+  document.getElementById('vName').textContent = 'Kamal Perera';
+  document.getElementById('vContact').textContent = '0771234567';
+  document.getElementById('vRoom').textContent = 'DELUXE';
+  document.getElementById('vIn').textContent = '2026-02-15';
+  document.getElementById('vOut').textContent = '2026-02-18';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>

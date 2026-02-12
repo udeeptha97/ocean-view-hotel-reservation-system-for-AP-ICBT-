@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  ...
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">Ocean View Resort <span class="badge">Help</span></div>
+      <div class="actions">
+        <a class="btn" href="dashboard.html">Back</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1>Help</h1>
+      <p>How to use the Room Reservation System.</p>
+
+      <h2>Login</h2>
+      <p>Open <b>login.html</b>, enter your username/password, and click Login.</p>
+
+      <h2>Add Reservation</h2>
+      <p>Go to <b>Add Reservation</b>, fill the form, and click Save.</p>
+
+      <h2>Display Reservation</h2>
+      <p>Enter a reservation number to view details.</p>
+
+      <h2>Calculate & Print Bill</h2>
+      <p>Enter reservation number, generate bill, and print.</p>
+
+      <div class="note">
+        This is UI-only. When you build Java Servlets + JDBC, these pages will send forms to your servlet URLs.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">Ocean View Resort <span class="badge">Add Reservation</span></div>
+      <div class="actions">
+        <a class="btn" href="dashboard.html">Back</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1>Add Reservation</h1>
+      <p>Fill the form and save the reservation.</p>
+
+      <!-- Later: action="addReservation" method="post" -->
+      <form action="reservationSaved.html" method="get">
+        <div class="grid">
+          <div class="col-6">
+            <label for="reservationNo">Reservation No</label>
+            <input id="reservationNo" name="reservationNo" type="text" placeholder="e.g., R001" required />
+          </div>
+
+          <div class="col-6">
+            <label for="guestName">Guest Name</label>
+            <input id="guestName" name="guestName" type="text" placeholder="e.g., Kamal Perera" required />
+          </div>
+
+          <div class="col-6">
+            <label for="contactNo">Contact No</label>
+            <input id="contactNo" name="contactNo" type="text" placeholder="e.g., 0771234567" required />
+          </div>
+
+          <div class="col-6">
+            <label for="roomType">Room Type</label>
+            <select id="roomType" name="roomType" required>
+              <option value="" disabled selected>Select a room type</option>
+              <option value="STANDARD">STANDARD</option>
+              <option value="DELUXE">DELUXE</option>
+              <option value="SUITE">SUITE</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" placeholder="Guest address (optional)"></textarea>
+          </div>
+
+          <div class="col-6">
+            <label for="checkIn">Check-in</label>
+            <input id="checkIn" name="checkIn" type="date" required />
+          </div>
+
+          <div class="col-6">
+            <label for="checkOut">Check-out</label>
+            <input id="checkOut" name="checkOut" type="date" required />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Save Reservation</button>
+          <button class="btn" type="reset">Clear</button>
+        </div>
+      </form>
+
+      <div class="note">
+        UI-only: This goes to <b>reservationSaved.html</b>. Later your servlet will save into MySQL.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
