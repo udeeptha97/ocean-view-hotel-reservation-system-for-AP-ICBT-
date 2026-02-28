@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ocean-webapp">
+    <output-path>$PROJECT_DIR$/out/artifacts/ocean_webapp</output-path>
+    <root id="root" />
+  </artifact>
+</component>
