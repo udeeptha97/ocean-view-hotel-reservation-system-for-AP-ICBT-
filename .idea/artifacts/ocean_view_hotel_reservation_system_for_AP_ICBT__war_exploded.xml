@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ocean-view-hotel-reservation-system-for-AP-ICBT-:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ocean_view_hotel_reservation_system_for_AP_ICBT__war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ocean-view-hotel-reservation-system-for-AP-ICBT-/web/Web" />
+    </root>
+  </artifact>
+</component>

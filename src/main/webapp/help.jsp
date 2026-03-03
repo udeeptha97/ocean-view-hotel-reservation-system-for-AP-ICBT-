@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Help</title>
+    <title>Help - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 <h2>Help Section</h2>
